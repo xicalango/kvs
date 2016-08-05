@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
+set -e
+
 KEY="$1"
 shift
 VALUE="$@"
+
+if [[ -z "$KEY" ]]; then
+  echo "no key"
+  exit 1
+fi
 
 INDEX=$(cat "$KEY/.table")
 
