@@ -18,10 +18,14 @@ fi
 
 let INDEX--
 
+CONTENT=$(cat "$KEY/$INDEX")
+
 echo $INDEX > "$KEY/.table"
 
 git add "$KEY/.table"
 git rm "$KEY/$INDEX"
 
-git commit -m "removed $OLD_INDEX from $KEY"
+git commit -m "removed $INDEX from $KEY"
+
+echo $CONTENT
 
