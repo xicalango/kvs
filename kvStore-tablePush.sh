@@ -9,6 +9,11 @@ if [[ -z "$KEY" ]]; then
   exit 1
 fi
 
+if [[ -z "$VALUE" ]]; then
+  echo "no value"
+  exit 1
+fi
+
 INDEX=$(cat "$KEY/.table")
 
 OLD_INDEX=$INDEX
